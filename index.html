@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Creating Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            /* background-color: yellow;     */
+            width: 60%;
+            margin: 30px auto;
+            padding: 30px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+            border-top: 5px solid blue;
+        }
+
+        .main-container h1 {
+            font-family: 'Arimo', sans-serif;
+            word-spacing: 1px;
+            letter-spacing: 3px;
+            text-align: center;
+
+        }
+
+        .form-container {
+            /* background-color: pink; */
+            margin: 0px auto;
+            width: 80%;
+
+        }
+
+        .input-field {
+            width: 80%;
+            margin: 30px auto;
+            /* background-color: red; */
+            position: relative;
+        }
+
+        .input-field .name,
+        .input-field .text-name {
+            padding: 7px 0px 7px 40px;
+            outline: none;
+            border: 1px solid rgb(213, 212, 212);
+        }
+
+        .name:hover,
+        .input-field .text-name:hover {
+            background-color: #f8f5f5;
+            border: 1px solid rgb(213, 212, 212);
+        }
+
+        .input-field .name:focus,
+        .input-field .text-name:focus {
+            border: 1.5px solid blue;
+        }
+
+
+        .input-field .name {
+            width: 46%;
+        }
+
+        .input-field .text-name {
+            width: 100%;
+        }
+
+        .input-field span {
+            margin-left: 6%;
+        }
+
+        .input-field i {
+            position: absolute;
+            border-right: 1px solid #ccc;
+            padding: 7.5px 9px;
+        }
+
+        .radio {
+            margin-right: 3px;
+        }
+
+        .label-radio {
+            margin-right: 4vw;
+        }
+
+        .country {
+            width: 100%;
+            padding: 5px;
+            border: 0px;
+        }
+
+        .sub-btn {
+            width: 48%;
+            border: 0px;
+            padding: 4px;
+            background-color: blue;
+            color: white;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .reset-btn {
+            width:48%;
+            border: 0px;
+            padding: 4px;
+            background-color: red;
+            color: white;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .sub-btn:hover {
+            background-color: rgb(83, 83, 226);
+        }
+
+        .reset-btn:hover {
+            background-color:rgb(238, 53, 53);
+        }
+
+        .checkbox{
+            margin-right: 10px;
+        }
+
+
+        /* Use media query */
+        @media (max-width:900px) {
+
+            .input-field .name {
+                width: 100%;
+            }
+
+            .input-field .name-f {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .input-field span {
+                margin: 0px;
+            }
+        }
+
+        @media (max-width:670px) {
+            .reset-btn {
+                width: 100%;
+                margin-bottom: 11px;
+            }
+            .sub-btn{
+                width: 100%;
+            }
+            .main-container{
+                width:80%;
+            }
+            .form-container{
+                width:95%;
+            }
+        }
+
+        @media (max-width:450px) {
+            .main-container{
+                width:90%;
+            }
+            .form-container{
+                width:99%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1>Registration Form</h1>
+        <div class="form-container">
+            <form action="">
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="First Name" class="name name-f"><span>
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Last Name" class="name">
+                    </span>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-sharp fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email" class="text-name">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-sharp fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" class="text-name">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-sharp fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Conform Password" class="text-name">
+                </div>
+
+                <div class="input-field">
+                    <input type="radio" name="sex" id="male-sex" class="radio">
+                    <label for="male-sex" class="label-radio">Male</label>
+
+                    <input type="radio" name="sex" id="female-sex" class="radio">
+                    <label for="female-sex">Female</label>
+                </div>
+
+                <div class="input-field">
+                    <select class="country">
+                        <option>Select your country</option>
+                        <option>Afganistan</option>
+                        <option>America</option>
+                        <option>Australia</option>
+                        <option>Brazil</option>
+                        <option>Bhutan</option>
+                        <option>Bangladesh</option>
+                        <option>China</option>
+                        <option>India</option>
+                        <option>Russia</option>
+                    </select>
+                </div>
+
+                <div class="input-field">
+                    <input type="checkbox" name="" id="term-condition" class="checkbox">
+                    <label for="term-condition">I accept all term and condition</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="reset" value="Reset data" class="reset-btn">
+                    <input type="submit" value="Register" class="sub-btn">
+                </div>
+                
+                
+
+                
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
